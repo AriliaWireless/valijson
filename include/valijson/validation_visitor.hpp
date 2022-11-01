@@ -18,6 +18,9 @@
 #pragma warning( disable : 4702 )
 #endif
 
+bool ExternalValijsonFormatChecker(const std::string &format, const std::string &value, std::vector<std::string> & context, valijson::ValidationResults * const results);
+
+
 namespace valijson {
 
 class ValidationResults;
@@ -402,7 +405,7 @@ public:
             }
         }
 
-        return true;
+        return ExternalValijsonFormatChecker(format,s,m_context,m_results);
     }
 
     /**
